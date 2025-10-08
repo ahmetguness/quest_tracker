@@ -23,7 +23,13 @@ const SelectionScreen = () => {
   const handleGoNextPage = () => {
     if (selectedCard) {
       dispatch(setUserType(selectedCard));
-      navigation.navigate("LoginScreen");
+      if (selectedCard === "child") {
+        navigation.navigate("ChildHomeScreen");
+      } else if (selectedCard === "parent") {
+        navigation.navigate("LoginScreen");
+      } else if (selectedCard === "guest") {
+        navigation.navigate("GuestHomeScreen");
+      }
     } else {
       Alert.alert("Please select a plan");
     }
@@ -31,8 +37,10 @@ const SelectionScreen = () => {
 
   return (
     <LinearGradient
-      colors={[COLORS.primary, COLORS.secondary]}
       style={styles.root}
+      colors={[COLORS.primary, COLORS.secondary]}
+      start={{ x: 0, y: 0.5 }}
+      end={{ x: 1, y: 0.5 }}
     >
       <View style={{ alignItems: "center", justifyContent: "center" }}>
         <Image

@@ -4,7 +4,9 @@ export type RootStackParamList = {
   IntroScreen: undefined;
   SelectionScreen: undefined;
   LoginScreen: undefined;
-  HomeScreen: undefined;
+  ChildHomeScreen: undefined;
+  ParentHomeScreen: undefined;
+  GuestHomeScreen: undefined;
 };
 
 export type GeneralNavigationProp = NavigationProp<RootStackParamList>;

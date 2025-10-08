@@ -1,16 +1,18 @@
-import { View, Text } from "react-native";
-import React from "react";
+import { LinearGradient } from "expo-linear-gradient";
+import { COLORS } from "../../theme/colors";
 import { styles } from "./styles";
-import { useSelector } from "react-redux";
-import { RootState } from "../../hooks/redux_toolkit/store";
+import { View } from "react-native";
 
 const LoginScreen = () => {
-  const userType = useSelector((state: RootState) => state.user.userType);
-  console.log(userType);
   return (
-    <View style={styles.root}>
-      <Text>LoginScreen</Text>
-    </View>
+    <LinearGradient
+      style={styles.root}
+      colors={[COLORS.primary, COLORS.secondary]}
+      start={{ x: 0, y: 0.5 }}
+      end={{ x: 1, y: 0.5 }}
+    >
+      <View style={styles.bottomContainer}></View>
+    </LinearGradient>
   );
 };
 

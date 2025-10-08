@@ -28,8 +28,10 @@ const IntroScreen = () => {
       onPress={handlePress}
     >
       <LinearGradient
-        colors={[COLORS.primary, COLORS.secondary]}
         style={styles.root}
+        colors={[COLORS.primary, COLORS.secondary]}
+        start={{ x: 0, y: 0.5 }}
+        end={{ x: 1, y: 0.5 }}
       >
         <Text style={[styles.text, { fontSize: 20, fontWeight: "bold" }]}>
           {APP_NAME}
